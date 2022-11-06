@@ -1,4 +1,4 @@
-﻿using DesignPattern.Proxy;
+﻿using DesignPattern.Bridge;
 
 Client.main();
 

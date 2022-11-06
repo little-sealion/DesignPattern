@@ -9,8 +9,10 @@
 
   <ItemGroup>
     <None Remove="Proxy\" />
+    <None Remove="Bridge\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Proxy\" />
+    <Folder Include="Bridge\" />
   </ItemGroup>
 </Project>
