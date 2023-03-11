@@ -1,10 +1,10 @@
-﻿// See https://aka.ms/new-console-template for more information
-using System;
+﻿using System;
 using DesignPattern;
 using DesignPattern.Command;
 using DesignPattern.Command.Editor;
 using DesignPattern.Command.VideoEditor;
 using DesignPattern.Iterator;
+using DesignPattern.Mediator;
 using DesignPattern.Memento;
 using DesignPattern.Observer;
 using DesignPattern.Observer.Stock;
@@ -13,6 +13,11 @@ using DesignPattern.Strategy;
 using DesignPattern.Template;
 using History = DesignPattern.Command.VideoEditor.History;
 using UndoCommand = DesignPattern.Command.VideoEditor.UndoCommand;
+
+// 8. use Mediator Pattern
+var dialog = new ArticlesDialogBox();
+dialog.SimulateUserInteraction();
+
 
 // 7. use Observer Pattern
 {
@@ -23,15 +28,15 @@ using UndoCommand = DesignPattern.Command.VideoEditor.UndoCommand;
     // dataSource.AddObservers(new List<IObserver> { sheet1, sheet2, chart });
     // dataSource.SetValue(200);
 
-    var stock1 = new Stock("300123", 1.43f);
-    var stock2 = new Stock("300111", 11.23f);
-    var stockListView = new StockListView();
-    stockListView.AddStock(stock1);
-    stockListView.AddStock(stock2);
-    var statusBar = new StatusBar();
-    statusBar.AddStock(stock1);
-    stock1.SetPrice(1.40f);
-    stock2.SetPrice(11.40f);
+    // var stock1 = new Stock("300123", 1.43f);
+    // var stock2 = new Stock("300111", 11.23f);
+    // var stockListView = new StockListView();
+    // stockListView.AddStock(stock1);
+    // stockListView.AddStock(stock2);
+    // var statusBar = new StatusBar();
+    // statusBar.AddStock(stock1);
+    // stock1.SetPrice(1.40f);
+    // stock2.SetPrice(11.40f);
 }
 
 
