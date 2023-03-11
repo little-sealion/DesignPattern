@@ -21,11 +21,11 @@ namespace DesignPattern.Observer
             _observers.Remove(observer);
         }
 
-        public void NotifyObservers(object newValue)
+        public void NotifyObservers()
         {
             foreach (var observer in _observers)
             {
-                observer.Update(newValue);
+                observer.Update();
             }
         }
     }

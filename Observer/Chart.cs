@@ -7,9 +7,16 @@ namespace DesignPattern.Observer
 {
     public class Chart : IObserver
     {
-        public void Update(object newValue)
+        private readonly DataSource _dataSource;
+
+        public Chart(DataSource dataSource)
         {
-            System.Console.WriteLine("Chart get notified,new value: " + newValue);
+            _dataSource = dataSource;
+        }
+
+        public void Update()
+        {
+            System.Console.WriteLine("Chart get notified: " + _dataSource.Value);
         }
     }
 }

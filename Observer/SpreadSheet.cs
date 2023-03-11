@@ -5,11 +5,21 @@ using System.Threading.Tasks;
 
 namespace DesignPattern.Observer
 {
+    // Each concrete IObserver class is now dependt on concrete subject class,
+    // so we can implement pull style, to selectively choose to get certain data from
+    // the concrete subject class
     public class SpreadSheet : IObserver
     {
-        public void Update(object newValue)
+        private readonly DataSource _dataSource;
+
+        public SpreadSheet(DataSource dataSource)
         {
-            System.Console.WriteLine("SpreadSheet get notified, new value: " + newValue);
+            _dataSource = dataSource;
+        }
+
+        public void Update()
+        {
+            System.Console.WriteLine("SpreadSheet get notified: " + _dataSource.Value);
         }
     }
 }
