@@ -7,9 +7,9 @@ namespace DesignPattern.Observer
 {
     public class SpreadSheet : IObserver
     {
-        public void Update()
+        public void Update(object newValue)
         {
-            System.Console.WriteLine("SpreadSheet get notified");
+            System.Console.WriteLine("SpreadSheet get notified, new value: " + newValue);
         }
     }
 }

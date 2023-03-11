@@ -11,7 +11,7 @@ namespace DesignPattern.Observer
         public void SetValue(int newValue)
         {
             Value = newValue;
-            NotifyObservers();
+            NotifyObservers(Value);
         }
     }
 }
