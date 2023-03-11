@@ -7,7 +7,7 @@ namespace DesignPattern.Observer
 {
     public class Chart : IObserver
     {
-        public void Update(int message)
+        public void Update()
         {
             System.Console.WriteLine("Chart get notified");
         }

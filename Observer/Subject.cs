@@ -11,9 +11,11 @@ namespace DesignPattern.Observer
         public void AddObserver(IObserver observer)
         {
             _observers.Add(observer);
-
         }
-
+        public void AddObservers(List<IObserver> observers)
+        {
+            _observers.AddRange(observers);
+        }
         public void RemoveObserver(IObserver observer)
         {
             _observers.Remove(observer);

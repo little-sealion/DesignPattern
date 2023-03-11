@@ -16,6 +16,11 @@ using UndoCommand = DesignPattern.Command.VideoEditor.UndoCommand;
 // 7. use Observer Pattern
 {
     var dataSource = new DataSource();
+    var sheet1 = new SpreadSheet();
+    var sheet2 = new SpreadSheet();
+    var chart = new Chart();
+    dataSource.AddObservers(new List<IObserver> { sheet1, sheet2, chart });
+    dataSource.SetValue(100);
 }
 
 
