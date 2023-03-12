@@ -17,6 +17,18 @@ using DesignPattern.Template;
 using History = DesignPattern.Command.VideoEditor.History;
 using UndoCommand = DesignPattern.Command.VideoEditor.UndoCommand;
 using File = DesignPattern.ChainOfResponsibility.DataReader.File;
+using DesignPattern.Visitor;
+using HtmlDocument = DesignPattern.Visitor.HtmlDocument;
+
+// 10. use Visitor Pattern
+{
+    var document = new HtmlDocument();
+    document.AddNode(new AnchorNode());
+    document.AddNode(new HeadingNode());
+    document.Execute(new HighlightOperation());
+    document.Execute(new PlainTextOperation());
+}
+
 
 // 9. use ChainOfResponsibility Pattern
 {
@@ -28,20 +40,20 @@ using File = DesignPattern.ChainOfResponsibility.DataReader.File;
     // var server = new WebServer(authenticator);
     // server.Handle(new HttpRequest("admin", "1234"));
 
-    var dataReader = DataReaderFactory.GetDataReaderChain();
-    dataReader.Read(new File("xls", "123,13,ads,542"));
-    dataReader.Read(new File("qbw", "123,13,ads,542"));
-    dataReader.Read(new File("numbers", "123,13,ads,542"));
-    try
-    {
-        dataReader.Read(new File("xlsx", "123,13,ads,542"));
+    // var dataReader = DataReaderFactory.GetDataReaderChain();
+    // dataReader.Read(new File("xls", "123,13,ads,542"));
+    // dataReader.Read(new File("qbw", "123,13,ads,542"));
+    // dataReader.Read(new File("numbers", "123,13,ads,542"));
+    // try
+    // {
+    //     dataReader.Read(new File("xlsx", "123,13,ads,542"));
 
-    }
-    catch (System.Exception e)
-    {
+    // }
+    // catch (System.Exception e)
+    // {
 
-        System.Console.WriteLine(e.Message);
-    }
+    //     System.Console.WriteLine(e.Message);
+    // }
 
 }
 
