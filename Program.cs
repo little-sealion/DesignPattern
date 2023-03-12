@@ -20,6 +20,37 @@ using File = DesignPattern.ChainOfResponsibility.DataReader.File;
 using DesignPattern.Visitor;
 using HtmlDocument = DesignPattern.Visitor.HtmlDocument;
 using DesignPattern.Visitor.WavFile;
+using DesignPattern.Composite;
+using DesignPattern.Composite.Team;
+
+
+// 11.use composite pattern
+{
+    // var group1 = new Group();
+    // group1.Add(new Shape());
+    // group1.Add(new Shape());
+    // var group2 = new Group();
+    // group2.Add(new Shape());
+    // group2.Add(new Shape());
+    // var group = new Group();
+    // group.Add(group1);
+    // group.Add(group2);
+    // group.Render();
+    // group.Move();
+
+    var subTeam1 = new Team();
+    subTeam1.Add(new Truck());
+    subTeam1.Add(new Human());
+    subTeam1.Add(new Human());
+    var subTeam2 = new Team();
+    subTeam2.Add(new Truck());
+    subTeam2.Add(new Human());
+    subTeam2.Add(new Human());
+    var team = new Team();
+    team.Add(subTeam1);
+    team.Add(subTeam2);
+    team.Deploy();
+}
 
 // 10. use Visitor Pattern
 {
@@ -30,12 +61,12 @@ using DesignPattern.Visitor.WavFile;
     // document.Execute(new PlainTextOperation());
 
 
-    var wavFile = new WavFile();
-    wavFile.AddSegment(new FactSegment());
-    wavFile.AddSegment(new FormatSegment());
-    wavFile.Execute(new ReduceNoiseOperation());
-    wavFile.Execute(new NormalizeOperation());
-    wavFile.Execute(new AddReverbOperation());
+    // var wavFile = new WavFile();
+    // wavFile.AddSegment(new FactSegment());
+    // wavFile.AddSegment(new FormatSegment());
+    // wavFile.Execute(new ReduceNoiseOperation());
+    // wavFile.Execute(new NormalizeOperation());
+    // wavFile.Execute(new AddReverbOperation());
 }
 
 
