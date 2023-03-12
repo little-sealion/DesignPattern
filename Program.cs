@@ -1,5 +1,7 @@
 ﻿using System;
 using DesignPattern;
+using DesignPattern.ChainOfResponsibility;
+using DesignPattern.ChainOfResponsibility.DataReader;
 using DesignPattern.Command;
 using DesignPattern.Command.Editor;
 using DesignPattern.Command.VideoEditor;
@@ -14,14 +16,43 @@ using DesignPattern.Strategy;
 using DesignPattern.Template;
 using History = DesignPattern.Command.VideoEditor.History;
 using UndoCommand = DesignPattern.Command.VideoEditor.UndoCommand;
+using File = DesignPattern.ChainOfResponsibility.DataReader.File;
+
+// 9. use ChainOfResponsibility Pattern
+{
+    //  authenticator  -> compressor -> encryptor
+    // var encryptor = new Encryptor(null);
+    // var compressor = new Compressor(encryptor);
+    // // var logger = new Logger(compressor);
+    // var authenticator = new Authenticator(compressor);
+    // var server = new WebServer(authenticator);
+    // server.Handle(new HttpRequest("admin", "1234"));
+
+    var dataReader = DataReaderFactory.GetDataReaderChain();
+    dataReader.Read(new File("xls", "123,13,ads,542"));
+    dataReader.Read(new File("qbw", "123,13,ads,542"));
+    dataReader.Read(new File("numbers", "123,13,ads,542"));
+    try
+    {
+        dataReader.Read(new File("xlsx", "123,13,ads,542"));
+
+    }
+    catch (System.Exception e)
+    {
+
+        System.Console.WriteLine(e.Message);
+    }
+
+}
+
 
 // 8. use Mediator Pattern
 {
     // var dialog = new ArticlesDialogBox();
     // dialog.SimulateUserInteraction();
 
-    var signUpDialogBox = new SignUpDialogBox();
-    signUpDialogBox.SimulateUserInteraction();
+    // var signUpDialogBox = new SignUpDialogBox();
+    // signUpDialogBox.SimulateUserInteraction();
 }
 
 
