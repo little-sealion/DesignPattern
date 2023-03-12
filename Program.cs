@@ -5,6 +5,7 @@ using DesignPattern.Command.Editor;
 using DesignPattern.Command.VideoEditor;
 using DesignPattern.Iterator;
 using DesignPattern.Mediator;
+using DesignPattern.Mediator.SignUpDialogBox;
 using DesignPattern.Memento;
 using DesignPattern.Observer;
 using DesignPattern.Observer.Stock;
@@ -15,8 +16,14 @@ using History = DesignPattern.Command.VideoEditor.History;
 using UndoCommand = DesignPattern.Command.VideoEditor.UndoCommand;
 
 // 8. use Mediator Pattern
-var dialog = new ArticlesDialogBox();
-dialog.SimulateUserInteraction();
+{
+    // var dialog = new ArticlesDialogBox();
+    // dialog.SimulateUserInteraction();
+
+    var signUpDialogBox = new SignUpDialogBox();
+    signUpDialogBox.SimulateUserInteraction();
+}
+
 
 
 // 7. use Observer Pattern
