@@ -19,14 +19,23 @@ using UndoCommand = DesignPattern.Command.VideoEditor.UndoCommand;
 using File = DesignPattern.ChainOfResponsibility.DataReader.File;
 using DesignPattern.Visitor;
 using HtmlDocument = DesignPattern.Visitor.HtmlDocument;
+using DesignPattern.Visitor.WavFile;
 
 // 10. use Visitor Pattern
 {
-    var document = new HtmlDocument();
-    document.AddNode(new AnchorNode());
-    document.AddNode(new HeadingNode());
-    document.Execute(new HighlightOperation());
-    document.Execute(new PlainTextOperation());
+    // var document = new HtmlDocument();
+    // document.AddNode(new AnchorNode());
+    // document.AddNode(new HeadingNode());
+    // document.Execute(new HighlightOperation());
+    // document.Execute(new PlainTextOperation());
+
+
+    var wavFile = new WavFile();
+    wavFile.AddSegment(new FactSegment());
+    wavFile.AddSegment(new FormatSegment());
+    wavFile.Execute(new ReduceNoiseOperation());
+    wavFile.Execute(new NormalizeOperation());
+    wavFile.Execute(new AddReverbOperation());
 }
 
 
