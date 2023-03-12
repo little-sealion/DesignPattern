@@ -5,13 +5,20 @@ using System.Threading.Tasks;
 
 namespace DesignPattern.Mediator
 {
-    public class UIControl
+    public abstract class UIControl
     {
-        protected DialogBox _owner;
-
-        public UIControl(DialogBox owner)
+        private List<Action> _eventHandlers = new();
+        public void AttachHandler(Action handler)
         {
-            _owner = owner;
+            _eventHandlers.Add(handler);
+        }
+
+        protected void NotifyHandlers()
+        {
+            foreach (var handler in _eventHandlers)
+            {
+                handler();
+            }
         }
     }
 }

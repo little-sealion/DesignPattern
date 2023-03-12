@@ -1,22 +1,23 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
 namespace DesignPattern.Mediator
 {
-    public class ArticlesDialogBox : DialogBox
+    public class ArticlesDialogBox
     {
-        private ListBox _articleListBox;
-        private TextBox _titleTextBox;
-        private Button _saveButton;
+        private ListBox _articleListBox = new ListBox();
+        private TextBox _titleTextBox = new TextBox();
+        private Button _saveButton = new Button();
 
         public ArticlesDialogBox()
         {
-            _articleListBox = new ListBox(this);
-            _titleTextBox = new TextBox(this);
-            _saveButton = new Button(this);
+            _articleListBox.AttachHandler(articleSelected);
+            _titleTextBox.AttachHandler(titleChanged);
         }
+
         public void SimulateUserInteraction()
         {
             _articleListBox.SetSelection("Article 1");
@@ -30,17 +31,7 @@ namespace DesignPattern.Mediator
             System.Console.WriteLine("Button: " + _saveButton.IsEnabled);
         }
 
-        public override void Changed(UIControl control)
-        {
-            if (control == _articleListBox)
-            {
-                articleSelected();
-            }
-            else if (control == _titleTextBox)
-            {
-                titleChanged();
-            }
-        }
+
 
         private void titleChanged()
         {
