@@ -26,6 +26,27 @@ using DesignPattern.Adapter;
 using DesignPattern.Adapter.AvaFilters;
 using DesignPattern.Adapter.Email;
 using DesignPattern.Adapter.Email.Gmail;
+using DesignPattern.Decorator;
+using Editor = DesignPattern.Decorator.Artifact.Editor;
+
+
+// 13. use decorator pattern
+{
+    // void StoreCreditCrad(IStream stream)
+    // {
+    //     stream.Write("1234-1234-1234-1234");
+    // }
+
+    // var cloudStream = new CloudStream();
+    // StoreCreditCrad(cloudStream);
+    // var encryptedStream = new EncryptedCloudStream(cloudStream);
+    // StoreCreditCrad(encryptedStream);
+    // var compressedStream = new CompressedCloudStream(encryptedStream);
+    // StoreCreditCrad(compressedStream);
+
+    Editor.OpenProject();
+}
+
 
 // 12. use adapter pattern
 {
@@ -33,9 +54,9 @@ using DesignPattern.Adapter.Email.Gmail;
     // imageView.Apply(new VividFilter());
     // imageView.Apply(new CaramelFilter(new Caramel() ));
 
-    var emailClient = new EmailClient();
-    emailClient.AddProvider(new GmailAdapter());
-    emailClient.DownloadEmails();
+    // var emailClient = new EmailClient();
+    // emailClient.AddProvider(new GmailAdapter());
+    // emailClient.DownloadEmails();
 }
 
 // 11.use composite pattern
