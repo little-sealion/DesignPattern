@@ -22,7 +22,21 @@ using HtmlDocument = DesignPattern.Visitor.HtmlDocument;
 using DesignPattern.Visitor.WavFile;
 using DesignPattern.Composite;
 using DesignPattern.Composite.Team;
+using DesignPattern.Adapter;
+using DesignPattern.Adapter.AvaFilters;
+using DesignPattern.Adapter.Email;
+using DesignPattern.Adapter.Email.Gmail;
 
+// 12. use adapter pattern
+{
+    // var imageView = new ImageView(new Image());
+    // imageView.Apply(new VividFilter());
+    // imageView.Apply(new CaramelFilter(new Caramel() ));
+
+    var emailClient = new EmailClient();
+    emailClient.AddProvider(new GmailAdapter());
+    emailClient.DownloadEmails();
+}
 
 // 11.use composite pattern
 {
@@ -38,18 +52,18 @@ using DesignPattern.Composite.Team;
     // group.Render();
     // group.Move();
 
-    var subTeam1 = new Team();
-    subTeam1.Add(new Truck());
-    subTeam1.Add(new Human());
-    subTeam1.Add(new Human());
-    var subTeam2 = new Team();
-    subTeam2.Add(new Truck());
-    subTeam2.Add(new Human());
-    subTeam2.Add(new Human());
-    var team = new Team();
-    team.Add(subTeam1);
-    team.Add(subTeam2);
-    team.Deploy();
+    // var subTeam1 = new Team();
+    // subTeam1.Add(new Truck());
+    // subTeam1.Add(new Human());
+    // subTeam1.Add(new Human());
+    // var subTeam2 = new Team();
+    // subTeam2.Add(new Truck());
+    // subTeam2.Add(new Human());
+    // subTeam2.Add(new Human());
+    // var team = new Team();
+    // team.Add(subTeam1);
+    // team.Add(subTeam2);
+    // team.Deploy();
 }
 
 // 10. use Visitor Pattern
