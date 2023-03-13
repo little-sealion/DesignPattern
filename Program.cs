@@ -28,7 +28,16 @@ using DesignPattern.Adapter.Email;
 using DesignPattern.Adapter.Email.Gmail;
 using DesignPattern.Decorator;
 using Editor = DesignPattern.Decorator.Artifact.Editor;
+using DesignPattern.Facade;
+using DesignPattern.Facade.Tweet;
 
+// 14.use facade pattern
+{
+    // var service = new NotificationService();
+    // service.Send("Hello World", "target");
+    var service = new TwitterService();
+    service.GetRecentTweets();
+}
 
 // 13. use decorator pattern
 {
@@ -44,7 +53,7 @@ using Editor = DesignPattern.Decorator.Artifact.Editor;
     // var compressedStream = new CompressedCloudStream(encryptedStream);
     // StoreCreditCrad(compressedStream);
 
-    Editor.OpenProject();
+    // Editor.OpenProject();
 }
 
 
