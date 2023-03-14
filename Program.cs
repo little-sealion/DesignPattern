@@ -9,7 +9,7 @@ using DesignPattern.Iterator;
 using DesignPattern.Mediator;
 using DesignPattern.Mediator.SignUpDialogBox;
 using DesignPattern.Memento;
-using DesignPattern.Observer;
+// using DesignPattern.Observer;
 using DesignPattern.Observer.Stock;
 using DesignPattern.State;
 using DesignPattern.Strategy;
@@ -30,13 +30,31 @@ using DesignPattern.Decorator;
 using Editor = DesignPattern.Decorator.Artifact.Editor;
 using DesignPattern.Facade;
 using DesignPattern.Facade.Tweet;
+using DesignPattern.Flyweight;
+using DesignPattern.Flyweight.SpreadSheet;
+
+// 15.use Flyweight pattern(separate the data we need to share in another class and 
+// use a factory to cache those reusable objects)
+{
+    // var service = new PointService(new PointIconFactory());
+    // foreach (var point in service.GetPoints())
+    // {
+    //     point.Draw();
+    // }
+    var fontFactory = new FontFactory();
+    var sheet = new SpreadSheet(fontFactory);
+    sheet.SetContent(0, 0, "Hello");
+    sheet.SetContent(1, 0, "World");
+    sheet.SetFontFamily(0, 0, FontType.TITLE);
+    sheet.Render();
+}
 
 // 14.use facade pattern
 {
     // var service = new NotificationService();
     // service.Send("Hello World", "target");
-    var service = new TwitterService();
-    service.GetRecentTweets();
+    // var service = new TwitterService();
+    // service.GetRecentTweets();
 }
 
 // 13. use decorator pattern
