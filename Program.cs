@@ -32,6 +32,23 @@ using DesignPattern.Facade;
 using DesignPattern.Facade.Tweet;
 using DesignPattern.Flyweight;
 using DesignPattern.Flyweight.SpreadSheet;
+using DesignPattern.Bridge;
+
+// 16.use Bridge Pattern
+{
+    var remoteControl = new RemoteControl(new SonyTV());
+    remoteControl.TurnOn();
+    remoteControl.TurnOff();
+    var advancedRemoteControl = new AdvancedRemoteControl(new SonyTV());
+    advancedRemoteControl.SetChannel(5);
+    var anotherRemoteControl = new RemoteControl(new SamsungTV());
+    anotherRemoteControl.TurnOn();
+    anotherRemoteControl.TurnOff();
+    var anotherAdvancedRemoteControl = new AdvancedRemoteControl(new SamsungTV());
+    anotherAdvancedRemoteControl.SetChannel(5);
+}
+
+
 
 // 15.use Flyweight pattern(separate the data we need to share in another class and 
 // use a factory to cache those reusable objects)
@@ -41,12 +58,12 @@ using DesignPattern.Flyweight.SpreadSheet;
     // {
     //     point.Draw();
     // }
-    var fontFactory = new FontFactory();
-    var sheet = new SpreadSheet(fontFactory);
-    sheet.SetContent(0, 0, "Hello");
-    sheet.SetContent(1, 0, "World");
-    sheet.SetFontFamily(0, 0, FontType.TITLE);
-    sheet.Render();
+    // var fontFactory = new FontFactory();
+    // var sheet = new SpreadSheet(fontFactory);
+    // sheet.SetContent(0, 0, "Hello");
+    // sheet.SetContent(1, 0, "World");
+    // sheet.SetFontFamily(0, 0, FontType.TITLE);
+    // sheet.Render();
 }
 
 // 14.use facade pattern
