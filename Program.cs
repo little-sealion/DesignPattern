@@ -33,19 +33,41 @@ using DesignPattern.Facade.Tweet;
 using DesignPattern.Flyweight;
 using DesignPattern.Flyweight.SpreadSheet;
 using DesignPattern.Bridge;
+using DesignPattern.Proxy;
+using DesignPattern.Proxy.Exercise;
+
+// 17.use Proxy Pattern
+{
+    // var library = new Library();
+    // var fileNames = new List<string> { "a", "b", "c" };
+    // foreach (var fileName in fileNames)
+    // {
+    //     library.Add(new LoggingEbookProxy(fileName));
+    // }
+    // library.OpenEbook("a");
+
+    var dbContext = new DbContext();
+    var product = dbContext.GetProduct(1);
+    product.SetName("update name");
+    dbContext.SaveChanges();
+
+    product.SetName("Another name");
+    dbContext.SaveChanges();
+}
+
 
 // 16.use Bridge Pattern
 {
-    var remoteControl = new RemoteControl(new SonyTV());
-    remoteControl.TurnOn();
-    remoteControl.TurnOff();
-    var advancedRemoteControl = new AdvancedRemoteControl(new SonyTV());
-    advancedRemoteControl.SetChannel(5);
-    var anotherRemoteControl = new RemoteControl(new SamsungTV());
-    anotherRemoteControl.TurnOn();
-    anotherRemoteControl.TurnOff();
-    var anotherAdvancedRemoteControl = new AdvancedRemoteControl(new SamsungTV());
-    anotherAdvancedRemoteControl.SetChannel(5);
+    // var remoteControl = new RemoteControl(new SonyTV());
+    // remoteControl.TurnOn();
+    // remoteControl.TurnOff();
+    // var advancedRemoteControl = new AdvancedRemoteControl(new SonyTV());
+    // advancedRemoteControl.SetChannel(5);
+    // var anotherRemoteControl = new RemoteControl(new SamsungTV());
+    // anotherRemoteControl.TurnOn(); 
+    // anotherRemoteControl.TurnOff();
+    // var anotherAdvancedRemoteControl = new AdvancedRemoteControl(new SamsungTV());
+    // anotherAdvancedRemoteControl.SetChannel(5);
 }
 
 
