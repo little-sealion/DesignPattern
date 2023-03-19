@@ -35,6 +35,19 @@ using DesignPattern.Flyweight.SpreadSheet;
 using DesignPattern.Bridge;
 using DesignPattern.Proxy;
 using DesignPattern.Proxy.Exercise;
+using DesignPattern.FactoryMethod;
+
+// 18.use Factory method pattern
+{
+    var beefResto = new BeefBurgerRestaurant();
+    var beefBurger = beefResto.CreateBurger();
+    beefBurger.Prepare();
+    var veggieResto = new VeggieBurgerRestaurant();
+    var veggieBurger = veggieResto.CreateBurger();
+    veggieBurger.Prepare();
+}
+
+
 
 // 17.use Proxy Pattern
 {
@@ -46,13 +59,13 @@ using DesignPattern.Proxy.Exercise;
     // }
     // library.OpenEbook("a");
 
-    var dbContext = new DbContext();
-    var product = dbContext.GetProduct(1);
-    product.SetName("update name");
-    dbContext.SaveChanges();
+    // var dbContext = new DbContext();
+    // var product = dbContext.GetProduct(1);
+    // product.SetName("update name");
+    // dbContext.SaveChanges();
 
-    product.SetName("Another name");
-    dbContext.SaveChanges();
+    // product.SetName("Another name");
+    // dbContext.SaveChanges();
 }
 
 
