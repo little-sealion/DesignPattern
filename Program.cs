@@ -38,14 +38,16 @@ using DesignPattern.Proxy.Exercise;
 using DesignPattern.FactoryMethod;
 using DesignPattern.AbstractFactory;
 
+// 20.use Builder Pattern
+
 // 19. use Abstract Factory Pattern
 {
-    var msiFac = new MsiManufacturer();
-    msiFac.CreateGpu();
-    msiFac.CreateMonitor();
-    var asusFac = new AsusManufacturer();
-    asusFac.CreateGpu();
-    asusFac.CreateMonitor();
+    // var msiFac = new MsiManufacturer();
+    // msiFac.CreateGpu();
+    // msiFac.CreateMonitor();
+    // var asusFac = new AsusManufacturer();
+    // asusFac.CreateGpu();
+    // asusFac.CreateMonitor();
 }
 
 
