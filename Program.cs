@@ -36,15 +36,27 @@ using DesignPattern.Bridge;
 using DesignPattern.Proxy;
 using DesignPattern.Proxy.Exercise;
 using DesignPattern.FactoryMethod;
+using DesignPattern.AbstractFactory;
+
+// 19. use Abstract Factory Pattern
+{
+    var msiFac = new MsiManufacturer();
+    msiFac.CreateGpu();
+    msiFac.CreateMonitor();
+    var asusFac = new AsusManufacturer();
+    asusFac.CreateGpu();
+    asusFac.CreateMonitor();
+}
+
 
 // 18.use Factory method pattern
 {
-    var beefResto = new BeefBurgerRestaurant();
-    var beefBurger = beefResto.CreateBurger();
-    beefBurger.Prepare();
-    var veggieResto = new VeggieBurgerRestaurant();
-    var veggieBurger = veggieResto.CreateBurger();
-    veggieBurger.Prepare();
+    // var beefResto = new BeefBurgerRestaurant();
+    // var beefBurger = beefResto.CreateBurger();
+    // beefBurger.Prepare();
+    // var veggieResto = new VeggieBurgerRestaurant();
+    // var veggieBurger = veggieResto.CreateBurger();
+    // veggieBurger.Prepare();
 }
 
 
